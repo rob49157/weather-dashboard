@@ -32,21 +32,22 @@
     <title>Weather Dashboard</title>
   
   <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Weather Dashboard</h1>
+        <p class="lead">One stop to get the wordl's Weather</p>
+     
+      
+    </header>
   
-    <div>
-          <header id =header>
-              Weather Dashboard
-          </header>
-          
-      </div>
     
-    <form>
+    
+    <form class="formclass">
         <label for="fname">City:</label><br>
-        <input type="text" id="city" ><br>
-        <button type="submit" onclick= "save()" value=" ">search</button>
+        <input type="text" id="city"  placeholder="city"><br>
+       <button type="submit" onclick= "save(city)" id="formid">search</button>
         
       </form>
     
-    
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -3,3 +3,16 @@
     text-align: center;
     padding: ;
     }
+
+.jumbotron{
+    background-color: aquamarine;
+}
+
+.jumbotron h1{
+    text-align: center;
+}
+
+
+.jumbotron  p{
+    text-align: center;
+}
