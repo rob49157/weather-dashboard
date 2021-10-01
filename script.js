@@ -2,10 +2,10 @@ var searchitem =$("#formid")
 var searchbar= $("#city")
 var url= "https://api.openweathermap.org/data/2.5/onecall?lat=34.0754&lon=84.2941&exclude={part}&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
 var currenttemo= "&current.temp="
-var humidity= "&current.humidity"
+var humidity= "&current.humidity="
 var currentweather= "&daily.weather.description="
 var uvindex= "&hourly.uvi="
-var wind= "&hourly.wind_speed"
+var wind= "&hourly.wind_speed="
 
 
 
@@ -20,8 +20,15 @@ $(searchitem).click(function(event){
 // get api
 
 fetch(url)
-.then(response => response.json())
-.then(data=> console.log(data))
+.then(function(response){
+    if( response.status!== 200){
+    console.log( "opps! something went wrong")
+    }
+response.json()
+})
+.then(function(data){
+    console.log(response)
+})
 
 
     
