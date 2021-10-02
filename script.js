@@ -1,6 +1,8 @@
 var searchitem =$("#formid")
 var searchbar= $("#city")
-var url= "https://api.openweathermap.org/data/2.5/onecall?lat=34.0754&lon=84.2941&exclude={part}&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
+//var url= "https://api.openweathermap.org/data/2.5/onecall?q=Atlanta&exclude=minutely&units=metric&current.temp=&daily.weather.description=&hourly.uvi=&hourly.wind_speed=&timezone=America/Atlanta&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
+var currenturl="https://api.openweathermap.org/data/2.5/weather?q=London&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
+
 var currenttemp= "&current.temp="
 var humidity= "&current.humidity="
 var currentweather= "&daily.weather.description="
@@ -19,7 +21,7 @@ $(searchitem).click(function(event){
 
 // get api
 
-fetch(url)
+fetch(currenturl)
 .then(function(response){
     if( response.status!== 200){
     console.log( "opps! something went wrong")
@@ -27,9 +29,21 @@ fetch(url)
 response.json()
 })
 .then(function(data){
-    searchitem.val()= currenttemp, humidity,currentweather,uvindex,wind
-    console.log(searchitem)
+    appendData(data)
+    
+    // console.log(searchitem)
 })
+
+// create display for the fetch data
+function weatherdisplay(){
+    var div= document.getElementById("weatherdata")
+    for( i=0; i<data.lenght; i++){
+        var creatercontainer= document.createElement(div)
+        creatercontainer.innerHTML= data[i]
+        div.appendChild(creatercontainer)
+    }
+}
+
 
 
     
