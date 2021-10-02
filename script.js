@@ -1,8 +1,8 @@
 var searchitem =$("#formid")
 var searchbar= $("#city")
 //var url= "https://api.openweathermap.org/data/2.5/onecall?q=Atlanta&exclude=minutely&units=metric&current.temp=&daily.weather.description=&hourly.uvi=&hourly.wind_speed=&timezone=America/Atlanta&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
-var currenturl="https://api.openweathermap.org/data/2.5/weather?q=London&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
-
+var currenturl="https://api.openweathermap.org/data/2.5/weather?q={searchcity}London&current.temp=&current.humidity=&daily.weather.description=&hourly.uvi=&hourly.wind_speed=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
+var searchcity= " "
 var currenttemp= "&current.temp="
 var humidity= "&current.humidity="
 var currentweather= "&daily.weather.description="
@@ -15,6 +15,7 @@ var wind= "&hourly.wind_speed="
 $(searchitem).click(function(event){
     event.preventDefault()
     searchitem = searchbar.val()
+    searchcity = searchitem
     console.log(searchitem)
 })
 
