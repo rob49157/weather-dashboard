@@ -34,22 +34,26 @@
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Weather Dashboard</h1>
-        <p class="lead">One stop to get the wordl's Weather</p>
+        <p class="lead">One stop to get the world's Weather</p>
      
       
     </header>
-  
-    
-    
+   <!-- search city button -->
     <form class="formclass">
         <label for="fname">City:</label><br>
         <input type="text" id="city"  placeholder="city"><br>
        <button type="submit" onclick= "save(city)" id="formid">search</button>
         
       </form>
-
-    <div id="weatherdata">
-      name:
+     <!-- display -->
+    <div class="weatherdata">
+     <p id ="W1">name:</p> 
+      <p id ="W2">temp:</p>
+      <p id ="W3">max temp:</p>
+     <p id ="W4">min temp</p> 
+      <p id ="W5">humidity:</p>
+     <p id ="W6">wind:</p> 
+    <p id ="W7">uv:</p>
     </div>
     
     <script src="./script.js"></script>
