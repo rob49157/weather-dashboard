@@ -13,34 +13,44 @@ var wind = "&hourly.wind_speed="
 
 
 // click event
-$(searchitem).click(function (event) {
+$(searchitem).click(async function (event) {
     event.preventDefault()
     searchitem = searchbar.val()
-    currenturl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchitem + "&current.temp=&current.humidity=&daily.weather.description=&hourly.uvi=&hourly.wind_speed=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
+    currenturl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchitem + " ," + searchitem + " &current.temp=&current.humidity=&daily.weather.description=&hourly.uvi=&hourly.wind_speed=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
     // get api
 
-    fetch(currenturl)
-        .then(function (response) {
-            if (response.status !== 200) {
-                console.log("opps! something went wrong")
-            }
-            response.json()
-        })
-        .then(function (data) {
-            console.log(data)
-        })
+    data = await fetch(currenturl)
+    .then(result => result.json())
+    .then(data => {
+    
+        
+        return(data)
+    })
+    weatherdisplay(data)
+        // .then(function (response) {
+        //     if (response.status !== 200) {
+        //         console.log("opps! something went wrong")
+        //     }
+        //     response.json()
+        // })
+        // .then((data) => {
+        //     console.log(data)
+        // })
+        // .then(function (data) {
+        //     console.log(data)
+        // })
 })
 
 
 // create display for the fetch data
-function weatherdisplay() {
+  function weatherdisplay(data){
+      
     var div = document.getElementById("weatherdata")
-    for (i = 0; i < data.lenght; i++) {
-        var creatercontainer = document.createElement(div)
-        creatercontainer.innerHTML = data[i]
-        div.appendChild(creatercontainer)
+    div.innerHTML = data.name
+    
     }
 }
+
 
 
 
