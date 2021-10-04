@@ -18,8 +18,9 @@
 }
 
 .weatherdata{
-    width:fit-content;
-    position: relative, center;
+    width: 800px;
+    
+    position: relative,;
     text-align: center;
     border-style: dashed;
     

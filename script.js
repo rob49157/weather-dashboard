@@ -3,6 +3,8 @@ var searchbar = $("#city")
 var searchcity = []
 //var url= "https://api.openweathermap.org/data/2.5/onecall?q=Atlanta&exclude=minutely&units=metric&current.temp=&daily.weather.description=&hourly.uvi=&hourly.wind_speed=&timezone=America/Atlanta&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
 var currenturl = ""
+var weathericon= ""
+
 
 
 
@@ -13,6 +15,8 @@ $(searchitem).click(async function (event) {
     event.preventDefault()
     searchitem = searchbar.val()
     currenturl = "https://api.openweathermap.org/data/2.5/weather/?q=" + searchitem + " ," + searchitem + "&units=imperial&current.temp=&current.humidity=&daily.weather.description=&current.uvi=&hourly.wind_speed=&current.weather.icon=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
+    // weathericon="http://openweathermap.org/img/wn/"+ div8 +" @2x.png"
+   
     // get api
 
     data = await fetch(currenturl)
@@ -23,6 +27,13 @@ $(searchitem).click(async function (event) {
         return(data)
     })
     weatherdisplay(data)
+
+    // data1= await fetch(weathericon)
+    // .then(response => response.json)
+    // .then(data1)
+    // return(data1)
+
+    
       
 })
 
@@ -44,12 +55,12 @@ $(searchitem).click(async function (event) {
     div5.innerHTML= "Wind: " + data.wind.speed
     div6.innerHTML=" Humidity: " + data.main.humidity
     div7.innerHTML=" UV: " + data.main.humidity
-    div8.innerHTML= data.weather.icon
+    div8.innerHTML= data.weather[0].icon
    
-    if (div8 === 70){
+    if (div8 !== 50){
        $(this).css('backgorund',"red")
    } else 
-        $(this).css('background',' blue')
+        $(this).css('background',' white')
 }
     
 
