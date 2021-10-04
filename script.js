@@ -12,7 +12,7 @@ var currenturl = ""
 $(searchitem).click(async function (event) {
     event.preventDefault()
     searchitem = searchbar.val()
-    currenturl = "https://api.openweathermap.org/data/2.5/weather/?q=" + searchitem + " ," + searchitem + " &current.temp=&current.humidity=&daily.weather.description=&current.uvi=&hourly.wind_speed=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
+    currenturl = "https://api.openweathermap.org/data/2.5/weather/?q=" + searchitem + " ," + searchitem + "&units=imperial&current.temp=&current.humidity=&daily.weather.description=&current.uvi=&hourly.wind_speed=&current.weather.icon=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
     // get api
 
     data = await fetch(currenturl)
@@ -36,15 +36,21 @@ $(searchitem).click(async function (event) {
     var div5= document.getElementById("W5")
     var div6= document.getElementById("W6")
     var div7= document.getElementById("W7")
-    div1.innerHTML= "Name:" + data.name
-    div2.innerHTML= "temp:" + data.main.temp
-    div3.innerHTML= "Max temp:" + data.main.temp_max
-    div4.innerHTML= "Min temp:" + data.main.temp_min
-    div5.innerHTML= "Wind:" + data.wind.speed
-    div6.innerHTML=" Humidity" + data.main.humidity
-    div7.innerHTML=" UV" + data.main.humidity
-    
-  }
+    var div8= document.getElementById("W8")
+    div1.innerHTML= "Name: " + data.name
+    div2.innerHTML= "temp: " + data.main.temp
+    div3.innerHTML= "Max temp: " + data.main.temp_max
+    div4.innerHTML= "Min temp: " + data.main.temp_min
+    div5.innerHTML= "Wind: " + data.wind.speed
+    div6.innerHTML=" Humidity: " + data.main.humidity
+    div7.innerHTML=" UV: " + data.main.humidity
+    div8.innerHTML= data.weather.icon
+   
+    if (div8 === 70){
+       $(this).css('backgorund',"red")
+   } else 
+        $(this).css('background',' blue')
+}
     
 
 

@@ -16,3 +16,13 @@
 .jumbotron  p{
     text-align: center;
 }
+
+.weatherdata{
+    width:fit-content;
+    position: relative, center;
+    text-align: center;
+    border-style: dashed;
+    
+    flex-wrap: wrap;
+    
+}
