@@ -12,7 +12,7 @@ var currenturl = ""
 $(searchitem).click(async function (event) {
     event.preventDefault()
     searchitem = searchbar.val()
-    currenturl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchitem + " ," + searchitem + " &current.temp=&current.humidity=&daily.weather.description=&current.uvi=&hourly.wind_speed=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
+    currenturl = "https://api.openweathermap.org/data/2.5/weather/?q=" + searchitem + " ," + searchitem + " &current.temp=&current.humidity=&daily.weather.description=&current.uvi=&hourly.wind_speed=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
     // get api
 
     data = await fetch(currenturl)
@@ -34,11 +34,15 @@ $(searchitem).click(async function (event) {
     var div3= document.getElementById("W3")
     var div4= document.getElementById("W4")
     var div5= document.getElementById("W5")
-    div1.innerHTML= data.name
-    div2.innerHTML= data.main.temp
-    div3.innerHTML= data.main.temp_max
-    div4.innerHTML= data.main.temp_min
-    div5.innerHTML= data.wind.speed
+    var div6= document.getElementById("W6")
+    var div7= document.getElementById("W7")
+    div1.innerHTML= "Name:" + data.name
+    div2.innerHTML= "temp:" + data.main.temp
+    div3.innerHTML= "Max temp:" + data.main.temp_max
+    div4.innerHTML= "Min temp:" + data.main.temp_min
+    div5.innerHTML= "Wind:" + data.wind.speed
+    div6.innerHTML=" Humidity" + data.main.humidity
+    div7.innerHTML=" UV" + data.main.humidity
     
   }
     
