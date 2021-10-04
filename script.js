@@ -50,19 +50,19 @@ $(searchitem).click(async function (event) {
     var div6= document.getElementById("W6")
     var div7= document.getElementById("W7")
     var div8= document.getElementById("W8")
-    div1.innerHTML= "Name: " + data.name
+    div1.innerHTML=  data.name
     div2.innerHTML= "temp: " + data.main.temp
     div3.innerHTML= "Max temp: " + data.main.temp_max
     div4.innerHTML= "Min temp: " + data.main.temp_min
     div5.innerHTML= "Wind: " + data.wind.speed
     div6.innerHTML=" Humidity: " + data.main.humidity
     div7.innerHTML=" UV: " + data.main.humidity
-    div8.innerHTML= "http://openweathermap.org/img/wn/"+ data.weather[0].icon+" @2x.png"
+    div8.innerHTML= "https://openweathermap.org/img/wn/"+ data.weather[0].icon+" @2x.png"
    
     if (div8 !== 50){
-       $(this).css('backgorund',"red")
+       $("#weatherdata").css('backgorund',"red")
    } else 
-        $(this).css('background',' white')
+        $("#weatherdata").css('background',' white')
 }
     
 
