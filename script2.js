@@ -10,12 +10,13 @@ $(searchitem).click(async function (event) {
     
     event.preventDefault()
     searchitem = searchbar.val()
-    currenturl2 = "api.openweathermap.org/data/2.5/forecast?q=" + searchitem + " ," + searchitem + "&units=imperial&current.temp=&current.humidity=&daily.weather.description=&current.uvi=&hourly.wind_speed=&current.weather.icon=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
-    
+    currenturl2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchitem + " ," + searchitem + "&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
+
    
     // get api
 
     data2 = await fetch(currenturl2)
+    
     .then(result => result.json())
     
     .then(data2 => {

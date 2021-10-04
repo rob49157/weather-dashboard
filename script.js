@@ -37,6 +37,8 @@ $(searchitem).click(async function (event) {
       
 })
 
+
+
 // create display for the fetch data
   function weatherdisplay(data){
       console.log(data)
