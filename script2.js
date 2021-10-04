@@ -32,7 +32,7 @@ $(searchitem).click(async function (event) {
       var day2= document.getElementById("D2")
       var day3= document.getElementById("D3")
       var day4= document.getElementById("D4")
-      var day5= document.getElementById("D8")
+      var day5= document.getElementById("D5")
         day1.innerHTML=  data2.list[1].main.temp
         day2.innerHTML=  data2.list[9].main.temp
         day3.innerHTML=  data2.list[17].main.temp

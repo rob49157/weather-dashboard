@@ -15,8 +15,7 @@ $(searchitem).click(async function (event) {
     event.preventDefault()
     searchitem = searchbar.val()
     currenturl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchitem + " ," + searchitem + "&units=imperial&current.temp=&current.humidity=&daily.weather.description=&current.uvi=&hourly.wind_speed=&current.weather.icon=&appid=913f8a0c9bf081d9e94bfd04b9efd30c"
-    //  weathericon="http://openweathermap.org/img/wn/"+ div8 +" @2x.png"
-   
+    
     // get api
 
     data = await fetch(currenturl)
@@ -49,7 +48,7 @@ $(searchitem).click(async function (event) {
     var div5= document.getElementById("W5")
     var div6= document.getElementById("W6")
     var div7= document.getElementById("W7")
-    var div8= document.getElementById("W8")
+    var weatherIcon= document.getElementById("image")
     div1.innerHTML=  data.name
     div2.innerHTML= "temp: " + data.main.temp
     div3.innerHTML= "Max temp: " + data.main.temp_max
@@ -57,9 +56,9 @@ $(searchitem).click(async function (event) {
     div5.innerHTML= "Wind: " + data.wind.speed
     div6.innerHTML=" Humidity: " + data.main.humidity
     div7.innerHTML=" UV: " + data.main.humidity
-    div8.innerHTML= "https://openweathermap.org/img/wn/"+ data.weather[0].icon+" @2x.png"
+    weatherIcon.src= "https://openweathermap.org/img/wn/"+ data.weather[0].icon+"@2x.png"
    
-    if (div8 !== 50){
+    if (weatherIcon !== 50){
        $("#weatherdata").css('backgorund',"red")
    } else 
         $("#weatherdata").css('background',' white')
