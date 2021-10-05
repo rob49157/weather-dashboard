@@ -23,17 +23,20 @@ $(searchitem).click(async function (event) {
     
         
         return(data2)
+        
     })
     forecastdisplay(data2)
 // display data
     function forecastdisplay(data2){
         console.log(data2)
-      var day1= document.getElementById("D1")  
+      var day1= document.getElementById("D1")
+      var day1icon= document.getElementById("DICON1")  
       var day2= document.getElementById("D2")
       var day3= document.getElementById("D3")
       var day4= document.getElementById("D4")
       var day5= document.getElementById("D5")
         day1.innerHTML=  data2.list[1].main.temp
+        day1icon.src= "https://openweathermap.org/img/wn/"+ data.weather[0].icon+"@2x.png"
         day2.innerHTML=  data2.list[9].main.temp
         day3.innerHTML=  data2.list[17].main.temp
         day4.innerHTML=  data2.list[25].main.temp
