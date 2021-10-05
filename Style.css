@@ -19,6 +19,8 @@
 
 .weatherdata{
     width: 800px;
+    margin-left: 50%;
+    position: absolute;
     
     position: sticky;
     text-align: center;
