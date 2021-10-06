@@ -31,7 +31,7 @@ $(searchitem).click(async function (event) {
         console.log(data2)
       var day1= document.getElementById("D1")
       var day1icon= document.getElementById("DICON1")
-      var DT= document.getElementById("d&t")
+      // var DT= document.getElementById("d&t")
 
       var day2= document.getElementById("D2")
       var day2icon= document.getElementById("DICON2")
@@ -45,7 +45,7 @@ $(searchitem).click(async function (event) {
       var day5= document.getElementById("D5")
       var day5icon= document.getElementById("DICON5")
 
-        DT.innerHTML= data2.list.dt_txt
+        // DT.innerHTML= data2.list.dt_txt
         day1.innerHTML=  data2.list[1].main.temp
         day1icon.src= "https://openweathermap.org/img/wn/"+ data2.list[1].weather[0].icon+"@2x.png"
         
