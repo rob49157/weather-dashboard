@@ -19,7 +19,7 @@
 
 .weatherdata{
     width: 800px;
-    margin-left: 50%;
+    margin-left: 25%;
     position: absolute;
     
     position: sticky;
@@ -27,4 +27,8 @@
     border-style: dashed;
     
     flex-wrap: wrap;
+}
+
+body{
+    background-color: #8FCADF;
 }
