@@ -18,6 +18,14 @@ functionality
 
 # script2.js
  same as the first script , but repeat for the 5-day forecast.
+ 
+# technologies used:
+OpenWeather One Call API 
+"https://openweathermap.org/api/one-call-api"
+
+# deployed link
+https://rob49157.github.io/weather-dashboard/
+
 
 # screenshot
 
